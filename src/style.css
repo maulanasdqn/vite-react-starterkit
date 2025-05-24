@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1c437e;
+
+  --color-gray-100: #f7f7f7f7;
+  --color-gray-200: #a7a7a7;
+  --color-gray-3D3: #3d3d3d;
+  --color-gray-E5E: #e5e5ea;
+  --color-gray-CAC: #cac4d0;
+  --color-gray-8E8: #8e8e93;
+
+  --color-black-252: #252525;
+  --color-black-333: #333;
+
+  --color-blue-357: #357af6;
+  --color-blue-A2B: #a2b2ca;
+  --color-blue-E8E: #e8ecf2;
+  --color-blue-F5E: #f5eefc;
+
+  --color-green-26B: #26bf94;
+  --color-green-48C: #48c9a5;
+  --color-green-E9F: #e9f8f4;
+  --color-green-34C: #34c759;
+
+  --color-orange-FF8: #ff8422;
+  --color-orange-EBD: #ebd498;
+  --color-orange-FAF: #faf4e6;
+  --color-orange-CD9: #cd9503;
+  --color-orange-FF9: #ff9500;
+  --color-orange-F6B: #f6bf5a;
+  --color-orange-FEF: #fef8ec;
+
+  --color-purple-7B5: #7b5cdc;
+
+  --color-red-F88: #f88f8f;
+  --color-red-F8C: #f8c1c1;
+  --color-red-F75: #f75151;
+  --color-red-FCE: #fcedeb;
+  --color-red-FF3: #ff3b30;
+  --color-red-E86: #e8634e;
+
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-manrope);
+  --font-regular: var(--font-manrope);
+  --font-default: var(--font-manrope);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-gray-50);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-3D3);
+  }
+}
+
+@layer base {
+  body {
+    font-family: var(--font-manrope);
+    font-weight: 400;
+  }
+}
+
+.hidden-label {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+.custom-calendar .react-datepicker__header {
+  background-color: #ffffff !important;
+  border-bottom: none !important;
+}
+
+.custom-calendar .react-datepicker {
+  border: none !important;
+}
+
+.custom-calendar .react-datepicker__day,
+.custom-calendar .react-datepicker__day-name {
+  margin: 0.8rem !important;
+  font-size: 14px !important;
+  width: 2rem !important;
+}
+
+.custom-calendar .react-datepicker__day-name {
+  color: #a7a7a7 !important;
+}
+
+.custom-calendar .react-datepicker__day--selected {
+  background-color: #1c437e !important;
+  color: white;
+}
