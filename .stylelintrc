@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "block-no-empty": null,
+    "unit-allowed-list": ["em", "rem", "%", "s"],
+    "alpha-value-notation": ["percentage", { "exceptProperties": ["opacity"] }],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "theme"
+        ]
+      }
+    ]
+  }
+}
