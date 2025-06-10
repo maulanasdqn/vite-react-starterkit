@@ -1,13 +1,8 @@
-import { lazy } from "react";
+import type { TPermissionItem } from "@/api/iam/permissions/type";
 import type { ReactNode, LazyExoticComponent } from "react";
 import type { ActionFunction, LoaderFunction, RouteObject } from "react-router";
-
-type TPermissionItem = {
-  id: string;
-  name: string;
-  created_at: string;
-  updated_at: string;
-};
+import { lazy } from "react";
+import { SessionUser } from "../local-storage/session-user";
 
 interface PageModuleExports {
   default: () => ReactNode;
@@ -38,15 +33,12 @@ async function checkPermissions(
   importer: () => Promise<unknown>,
 ): Promise<boolean> {
   const result = (await importer()) as PageModuleExports;
-  const localStoragePermission = localStorage.getItem("permissions");
-  const permissions: TPermissionItem[] | undefined = localStoragePermission
-    ? JSON.parse(localStoragePermission)
-    : undefined;
-
+  const localStoragePermission = SessionUser.get()?.user?.role?.permissions;
+  const permissions: TPermissionItem[] | undefined = localStoragePermission;
   return "permissions" in result
     ? result.permissions?.every(
         (permission) =>
-          permissions?.some((item) => permission === item.name) || false,
+          permissions?.some((item) => permission === item.key) || false,
       ) || false
     : true;
 }

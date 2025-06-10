@@ -1,7 +1,10 @@
 import { ROUTES } from "./routes";
 
 export const mappingPublicRoutes = [
+  ROUTES.ROOT,
   ROUTES.AUTH.LOGIN,
   ROUTES.AUTH.FORGOT,
   ROUTES.AUTH.NEW_PASSWORD,
+  ROUTES.AUTH.RESET_PASSWORD,
+  ROUTES.AUTH.REGISTER,
 ];

@@ -1,7 +1,7 @@
 {
   "rules": {
     "block-no-empty": null,
-    "unit-allowed-list": ["em", "rem", "%", "s"],
+    "unit-allowed-list": ["em", "rem", "%", "s", "px"],
     "alpha-value-notation": ["percentage", { "exceptProperties": ["opacity"] }],
     "at-rule-no-unknown": [
       true,
@@ -12,6 +12,7 @@
           "variants",
           "responsive",
           "screen",
+          "custom-variant",
           "theme"
         ]
       }

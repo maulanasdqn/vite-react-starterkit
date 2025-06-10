@@ -1,13 +1,14 @@
 import type { TResponseDetail, TResponseList } from "@/entities/types/response";
 import type { z } from "zod";
 import type { usersCreateSchema, usersUpdateSchema } from "./schema";
+import type { TRoleItem } from "../roles/type";
 
 export type TUserItem = {
   id: string;
   email: string;
   fullname: string;
   phone_number: string;
-  role: unknown;
+  role: TRoleItem;
   created_at: string;
   updated_at: string;
 };
